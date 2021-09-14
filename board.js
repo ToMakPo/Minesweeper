@@ -57,7 +57,7 @@ const Cell = function(rowNumber, colNumber) {
     this.element = $(`<div id='cell-r${rowNumber}-c${colNumber}' class='cell'>`)
         .append($('<span>'))
     this.element
-            .on('mousedown', this, () => { startClick(() => this.flag(), this) })
+            .on('mousedown', () => { startClick(() => this.flag(), this) })
             .on('mouseup', () => {
                 if (clicked) {
                     endClick()
@@ -65,6 +65,13 @@ const Cell = function(rowNumber, colNumber) {
                 }
             })
             .on('mouseout', () => { if (clicked) endClick() })
+            .on('touchstart', () => { startClick(() => this.flag(), this) })
+            .on('touchend', () => {
+                if (clicked) {
+                    endClick()
+                    this.select()
+                }
+            })
 }
 
 Cell.prototype.checkNeighbours = function() {
