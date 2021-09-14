@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id='board'></div>
+    <br>
+    <div id='dashboard'>
+        <div>Remaining: <span id='counter'></span></div>
+        
+    </div>
+    <hr>
+    <table id='options'>
+        <tr>
+            <th>Rows</th>
+            <td><input type="number" name="rowCount" id="rows-input" min="10" max="100" value="10"></td>
+        </tr>
+        <tr>
+            <th>Columns</th>
+            <td><input type="number" name="colCount" id="columns-input" min="10" max="100" value='10'></td>
+        </tr>
+        <tr>
+            <th>Bombs</th>
+            <td><input type="number" name="bombCount" id="bombs-input" min="1" max="9999" value='10'></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Start" id="start-button" onclick="startGame">
+            </td>
+        </tr>
+    </table>
+
+    <script src='./board.js'></script>
+</body>
+
+</html>
