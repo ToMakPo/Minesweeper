@@ -4,6 +4,7 @@ const colsInput = $('#columns-input')
 const bombsInput = $('#bombs-input')
 const counter = $('#counter')
 const startButton = $('#start-button')
+const flagIcon = $('#flag-icon')
 const messageBox = $('<div id="message-box">')
     .append($('<div>').append($('<h1>'), $('<span>'), $('<b>✖</b>')))
 
@@ -25,6 +26,8 @@ const icons = {
     flag: '🚩',
     bomb: '💣'
 }
+
+flagIcon.text(icons.flag)
 
 const longClick = 250
 let clickTimer = null

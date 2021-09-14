@@ -21,6 +21,7 @@ input[type="number"] {
 
 #start-button {
   width: 100%;
+  padding: 10px 20px;
 }
 
 #board {
