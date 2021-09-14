@@ -407,6 +407,8 @@ function winGame() {
         b.element.attr('data-flagged', true)
     }
 
+    updateCounter()
+
     gameState = false
     activeGame = false
 }
