@@ -406,8 +406,9 @@ function winGame() {
         b.setText(icons.flag)
         b.element.attr('data-flagged', true)
     }
-
-    updateCounter()
+    
+    remaining = 0
+    counter.text(remaining)
 
     gameState = false
     activeGame = false
