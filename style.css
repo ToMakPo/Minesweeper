@@ -32,6 +32,11 @@ input[type="number"] {
   position: relative;
 }
 
+.table * {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
 #message-box {
   position: absolute;
   width: calc( 100% - 10px);
@@ -67,7 +72,6 @@ input[type="number"] {
 
 #message-box div b {
   position: absolute;
-  top: 5px;
   right: 5px;
   cursor: pointer;
 }

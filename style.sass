@@ -31,6 +31,14 @@ input
     border-radius: 5px
     position: relative
 
+    *
+        -webkit-touch-callout: none
+        -webkit-user-select: none
+        -khtml-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+
 #message-box
     position: absolute
     width: calc( 100% - 10px )
@@ -67,7 +75,7 @@ input
         
         b
             position: absolute
-            top: 5px
+            // top: 5px
             right: 5px
             cursor: pointer
 
