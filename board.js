@@ -47,6 +47,8 @@ function endClick() {
     clearTimeout(clickTimer)
 }
 
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
 const Cell = function(rowNumber, colNumber) {
     this.rowNumber = rowNumber
     this.colNumber = colNumber
@@ -385,6 +387,8 @@ function newGame() {
 
     gameState = true
     activeGame = false
+
+    navigator.vibrate([0.2, 0.2, 0.2, 0.2, 0.2])
 }
 
 function endGame(explodedCell) {
