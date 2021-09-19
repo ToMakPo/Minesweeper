@@ -120,7 +120,7 @@ Cell.prototype.select = function() {
         } else {
             this.element.attr('data-selected', true)
             this.setText(this.count)
-            viberate.select()
+            //viberate.select()
         }
 
         checkIfWon()
@@ -140,12 +140,12 @@ Cell.prototype.flag = function() {
         } else {
             this.flagged = false
         }
-        viberate.placeFlag()
+        //viberate.placeFlag()
     } else {
         this.setText('')
         this.element.attr('data-flagged', false)
         flags.splice(flags.indexOf(this), 1)
-        viberate.removeFlag()
+        //viberate.removeFlag()
     }
 
     updateCounter()
@@ -399,7 +399,7 @@ function newGame() {
     gameState = true
     activeGame = false
 
-    viberate.startGame()
+    //viberate.startGame()
 }
 
 function endGame(explodedCell) {
@@ -415,7 +415,7 @@ function endGame(explodedCell) {
     gameState = false
     activeGame = false
 
-    viberate.loseGame()
+    //viberate.loseGame()
 }
 
 function winGame() {
@@ -433,7 +433,7 @@ function winGame() {
     gameState = false
     activeGame = false
 
-    viberate.winGame()
+    //viberate.winGame()
 }
 
 rowsInput.on('change', checkSizeInput)
