@@ -388,7 +388,7 @@ function newGame() {
     gameState = true
     activeGame = false
 
-    navigator.vibrate([0.2, 0.2, 0.2, 0.2, 0.2])
+    navigator.vibrate([1, 1, 1, 1, 1])
 }
 
 function endGame(explodedCell) {
@@ -403,6 +403,8 @@ function endGame(explodedCell) {
 
     gameState = false
     activeGame = false
+
+    navigator.vibrate([3])
 }
 
 function winGame() {
