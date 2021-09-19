@@ -112,6 +112,7 @@ Cell.prototype.select = function() {
         } else {
             this.element.attr('data-selected', true)
             this.setText(this.count)
+            navigator.vibrate([1])
         }
 
         checkIfWon()
@@ -131,10 +132,12 @@ Cell.prototype.flag = function() {
         } else {
             this.flagged = false
         }
+        navigator.vibrate([1, 1, 1])
     } else {
         this.setText('')
         this.element.attr('data-flagged', false)
         flags.splice(flags.indexOf(this), 1)
+        navigator.vibrate([1])
     }
 
     updateCounter()
@@ -421,6 +424,8 @@ function winGame() {
 
     gameState = false
     activeGame = false
+
+    navigator.vibrate([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 }
 
 rowsInput.on('change', checkSizeInput)
