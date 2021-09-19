@@ -48,6 +48,14 @@ function endClick() {
 }
 
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+viberate = {
+    startGame: () => navigator.vibrate([100]),
+    loseGame: () => navigator.vibrate([500]),
+    winGame: () => navigator.vibrate([100, 100, 100, 100, 100]),
+    selectCall: () => navigator.vibrate([100]),
+    placeFlag: () => navigator.vibrate([50, 50, 50]),
+    removeFlag: () => navigator.vibrate([100]),
+} 
 
 const Cell = function(rowNumber, colNumber) {
     this.rowNumber = rowNumber
@@ -112,7 +120,7 @@ Cell.prototype.select = function() {
         } else {
             this.element.attr('data-selected', true)
             this.setText(this.count)
-            navigator.vibrate([1])
+            viberate.select()
         }
 
         checkIfWon()
@@ -132,12 +140,12 @@ Cell.prototype.flag = function() {
         } else {
             this.flagged = false
         }
-        navigator.vibrate([1, 1, 1])
+        viberate.placeFlag()
     } else {
         this.setText('')
         this.element.attr('data-flagged', false)
         flags.splice(flags.indexOf(this), 1)
-        navigator.vibrate([1])
+        viberate.removeFlag()
     }
 
     updateCounter()
@@ -391,7 +399,7 @@ function newGame() {
     gameState = true
     activeGame = false
 
-    navigator.vibrate([1, 1, 1, 1, 1])
+    viberate.startGame()
 }
 
 function endGame(explodedCell) {
@@ -407,7 +415,7 @@ function endGame(explodedCell) {
     gameState = false
     activeGame = false
 
-    navigator.vibrate([3])
+    viberate.loseGame()
 }
 
 function winGame() {
@@ -425,7 +433,7 @@ function winGame() {
     gameState = false
     activeGame = false
 
-    navigator.vibrate([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+    viberate.winGame()
 }
 
 rowsInput.on('change', checkSizeInput)
