@@ -52,7 +52,7 @@ viberate = {
     startGame: () => navigator.vibrate([100]),
     loseGame: () => navigator.vibrate([150, 25, 150, 25, 150]),
     winGame: () => navigator.vibrate([100, 100, 100, 100, 100, 100, 100, 100, 100]),
-    selectCall: () => navigator.vibrate([50]),
+    selectCall: () => '', //navigator.vibrate([50]),
     placeFlag: () => navigator.vibrate([50, 25, 50]),
     removeFlag: () => navigator.vibrate([100])
 } 
